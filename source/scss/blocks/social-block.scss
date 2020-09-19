@@ -18,6 +18,11 @@
   color: $c-dark;
   border-radius: 50%;
 
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
   }
@@ -35,6 +40,11 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 
   svg {
@@ -42,6 +52,11 @@
     display: block;
     width: 2.3rem;
     height: 2.2rem;
+
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 
   &:hover,
@@ -89,6 +104,11 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -168,6 +188,11 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
