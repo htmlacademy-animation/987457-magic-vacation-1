@@ -1694,28 +1694,28 @@ img {
     opacity: 0; }
   100% {
     opacity: 1;
-    transform: translateY(-30px); } }
+    transform: translateY(-5rem); } }
 
 @-moz-keyframes fadeIn {
   0% {
     opacity: 0; }
   100% {
     opacity: 1;
-    transform: translateY(-30px); } }
+    transform: translateY(-5rem); } }
 
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0; }
   100% {
     opacity: 1;
-    transform: translateY(-30px); } }
+    transform: translateY(-5rem); } }
 
 @-o-keyframes fadeIn {
   0% {
     opacity: 0; }
   100% {
     opacity: 1;
-    transform: translateY(-30px); } }
+    transform: translateY(-5rem); } }
 
 .page-header {
   position: fixed;
@@ -1928,10 +1928,10 @@ img {
     display: block;
     color: inherit;
     padding: 0 0.5em 0.5em;
-    -webkit-transition: color 0.2s ease-out;
-    -moz-transition: color 0.2s ease-out;
-    -o-transition: color 0.2s ease-out;
-    transition: color 0.2s ease-out; }
+    -webkit-transition: color 0.2s ease;
+    -moz-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+    transition: color 0.2s ease; }
     .page-header__menu a::after {
       content: "";
       position: absolute;
@@ -1939,11 +1939,11 @@ img {
       width: 0;
       height: 2px;
       background-color: #ffffff;
-      left: 0;
-      -webkit-transition: all 0.3s ease-in-out;
-      -moz-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out; }
+      right: 0;
+      -webkit-transition: width 0.3s ease, background-color 0.3s ease;
+      -moz-transition: width 0.3s ease, background-color 0.3s ease;
+      -o-transition: width 0.3s ease, background-color 0.3s ease;
+      transition: width 0.3s ease, background-color 0.3s ease; }
       @media (max-width: 1024px) and (orientation: portrait) {
         .page-header__menu a::after {
           left: 0;
@@ -1959,15 +1959,14 @@ img {
       .page-header__menu a.active::after {
         display: block;
         width: 100%; }
-    .page-header__menu a:hover:not(.active), .page-header__menu a:focus:not(.active) {
-      display: block;
+    .page-header__menu a:hover, .page-header__menu a:focus {
       color: #a67ee5;
       outline: none; }
-      .page-header__menu a:hover:not(.active)::after, .page-header__menu a:focus:not(.active)::after {
+      .page-header__menu a:hover::after, .page-header__menu a:focus::after {
+        background-color: #a67ee5;
         width: 100%;
-        display: block;
-        opacity: 1;
-        background-color: #a67ee5; }
+        right: auto;
+        left: 0; }
 
 .page-header__social {
   margin-left: 4.8rem; }
@@ -3222,30 +3221,38 @@ img {
 @keyframes fadeInSliderBlocks {
   0% {
     opacity: 0; }
-  100% {
+  50% {
     opacity: 1;
-    transform: translateX(-15px); } }
+    transform: translateX(-3rem); }
+  100% {
+    transform: translateX(-3rem); } }
 
 @-moz-keyframes fadeInSliderBlocks {
   0% {
     opacity: 0; }
-  100% {
+  50% {
     opacity: 1;
-    transform: translateX(-15px); } }
+    transform: translateX(-3rem); }
+  100% {
+    transform: translateX(-3rem); } }
 
 @-webkit-keyframes fadeInSliderBlocks {
   0% {
     opacity: 0; }
-  100% {
+  50% {
     opacity: 1;
-    transform: translateX(-15px); } }
+    transform: translateX(-3rem); }
+  100% {
+    transform: translateX(-3rem); } }
 
 @-o-keyframes fadeInSliderBlocks {
   0% {
     opacity: 0; }
-  100% {
+  50% {
     opacity: 1;
-    transform: translateX(-15px); } }
+    transform: translateX(-3rem); }
+  100% {
+    transform: translateX(-3rem); } }
 
 @keyframes fadeInTitle {
   0% {
@@ -3279,6 +3286,10 @@ img {
     pointer-events: auto; }
 
 .social-block__toggler {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   padding: 0;
   margin: 0;
   background: none;
@@ -3290,11 +3301,7 @@ img {
   width: 4rem;
   height: 4rem;
   color: #5f458c;
-  border-radius: 50%;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
+  border-radius: 50%; }
   .social-block__toggler:focus {
     outline: none; }
   @media (max-width: 1024px) and (orientation: portrait) {
@@ -3304,6 +3311,10 @@ img {
     .social-block__toggler {
       display: none; } }
   .social-block__toggler::before {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -3314,23 +3325,19 @@ img {
     border-radius: 50%;
     background-color: #ffffff;
     border: 2px solid #ffffff;
-    z-index: -1;
+    z-index: -1; }
+  .social-block__toggler svg {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out; }
-  .social-block__toggler svg {
+    transition: all 0.2s ease-in-out;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: block;
     width: 2.3rem;
-    height: 2.2rem;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out; }
+    height: 2.2rem; }
   .social-block__toggler:hover,
   .social-block--active .social-block__toggler {
     color: #a67ee5; }
@@ -3355,6 +3362,10 @@ img {
       border-color: #a67ee5; }
 
 .social-block__list {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -3363,11 +3374,7 @@ img {
   right: 0;
   margin-top: 1.5rem;
   opacity: 0;
-  pointer-events: none;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
+  pointer-events: none; }
   @media (min-width: 2000px) {
     .social-block__list {
       margin-top: 15px; } }
