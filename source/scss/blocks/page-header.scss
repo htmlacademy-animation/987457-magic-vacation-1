@@ -242,10 +242,10 @@
     color: inherit;
     padding: 0 0.5em 0.5em;
 
-    -webkit-transition: color 0.2s ease-out;
-    -moz-transition: color 0.2s ease-out;
-    -o-transition: color 0.2s ease-out;
-    transition: color 0.2s ease-out;
+    -webkit-transition: color 0.2s ease;
+    -moz-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+    transition: color 0.2s ease;
 
     &::after {
       content: "";
@@ -254,11 +254,11 @@
       width: 0;
       height: 2px;
       background-color: $c-light;
-      left: 0;
-      -webkit-transition: all 0.3s ease-in-out;
-      -moz-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out;
+      right: 0;
+      -webkit-transition: width 0.3s ease, background-color 0.3s ease;
+      -moz-transition: width 0.3s ease, background-color 0.3s ease;
+      -o-transition: width 0.3s ease, background-color 0.3s ease;
+      transition: width 0.3s ease, background-color 0.3s ease;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -282,17 +282,16 @@
       }
     }
 
-    &:hover:not(.active),
-    &:focus:not(.active) {
-      display: block;
+    &:hover,
+    &:focus {
       color: $c-purple;
       outline: none;
 
       &::after {
-        width: 100%;
-        display: block;
-        opacity: 1;
         background-color: $c-purple;
+        width: 100%;
+        right: auto;
+        left: 0;
       }
     }
   }
