@@ -315,9 +315,12 @@
   0% {
     opacity: 0;
   }
-  100% {
+  50% {
     opacity: 1;
-    transform: translateX(-15px);
+    transform: translateX(-3rem);
+  }
+  100% {
+    transform: translateX(-3rem);
   }
 }
 
@@ -325,9 +328,12 @@
   0% {
     opacity: 0;
   }
-  100% {
+  50% {
     opacity: 1;
-    transform: translateX(-15px);
+    transform: translateX(-3rem);
+  }
+  100% {
+    transform: translateX(-3rem);
   }
 }
 
@@ -335,9 +341,12 @@
   0% {
     opacity: 0;
   }
-  100% {
+  50% {
     opacity: 1;
-    transform: translateX(-15px);
+    transform: translateX(-3rem);
+  }
+  100% {
+    transform: translateX(-3rem);
   }
 }
 
@@ -345,9 +354,12 @@
   0% {
     opacity: 0;
   }
-  100% {
+  50% {
     opacity: 1;
-    transform: translateX(-15px);
+    transform: translateX(-3rem);
+  }
+    100% {
+    transform: translateX(-3rem);
   }
 }
 
