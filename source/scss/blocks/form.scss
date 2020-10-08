@@ -3,7 +3,12 @@
   display: flex;
   align-items: center;
 }
-
+.form__wrapper {
+  margin-right: 3rem;
+  width: calc(100% - 21rem);
+  border-radius: 3rem;
+  overflow: hidden;
+}
 .form__label {
   position: absolute;
   bottom: 100%;
@@ -29,12 +34,51 @@
   }
 }
 
+@keyframes appearFormField {
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-moz-keyframes appearFormField {
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-o-keyframes appearFormField {
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes appearFormField {
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .form__field {
   flex: none;
   margin-right: 3rem;
   padding: 0 5.6rem;
   height: 6rem;
-  width: calc(100% - 21rem);
+  width: 100%;
   text-transform: uppercase;
   font: inherit;
   font-size: 2.4rem;
@@ -43,9 +87,14 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
+  transform: translate3d(100%, 0, 0);
 
   &:focus {
     border: 1px solid $c-purple;
+  }
+
+  .active & {
+    animation: appearFormField 0.6s linear forwards;
   }
 
   @media (min-width: $stop-scaling) {
