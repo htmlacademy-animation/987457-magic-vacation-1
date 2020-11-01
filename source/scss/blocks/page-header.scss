@@ -35,6 +35,9 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  transform: translateX(-2rem);
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0.9, 0.5, 1) 0.3s, transform 0.6s cubic-bezier(0.4, 0.9, 0.5, 1) 0.3s;
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -62,6 +65,11 @@
     .page-header--menu-opened & {
       color: $c-dark;
     }
+  }
+
+  .load & {
+    opacity: 1;
+    transform: translateX(0);
   }
 
   svg {
@@ -130,6 +138,8 @@
 .page-header__nav {
   display: flex;
   align-items: center;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0.9, 0.5, 1) 0.3s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
@@ -167,6 +177,10 @@
     .page-header--menu-opened & {
       transform: translateX(0);
     }
+  }
+
+  .load & {
+    opacity: 1;
   }
 }
 
@@ -255,10 +269,10 @@
       height: 2px;
       background-color: $c-light;
       right: 0;
-      -webkit-transition: width 0.3s ease, background-color 0.3s ease;
-      -moz-transition: width 0.3s ease, background-color 0.3s ease;
-      -o-transition: width 0.3s ease, background-color 0.3s ease;
-      transition: width 0.3s ease, background-color 0.3s ease;
+      -webkit-transition: width 0.5s ease 0.3s, background-color 0.5s ease 0.3s;
+      -moz-transition: width 0.5s ease 0.3s, background-color 0.5s ease 0.3s;
+      -o-transition: width 0.5s ease 0.3s, background-color 0.5s ease 0.3s;
+      transition: width 0.5s ease 0.3s, background-color 0.5s ease 0.3s;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -273,12 +287,24 @@
       }
     }
 
-    &.active {
-      cursor: default;
+    //&.active {
+    //  cursor: default;
+    //
+    //  &::after {
+    //    display: block;
+    //    width: 100%;
+    //  }
+    //}
 
-      &::after {
-        display: block;
-        width: 100%;
+    .load & {
+      &.active {
+        cursor: default;
+        outline: none;
+        &::after {
+          display: block;
+          width: 100%;
+          left: 0;
+        }
       }
     }
 
