@@ -10,6 +10,8 @@ export default class FullPageScroll {
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
+
+    this.curtainBlock = document.querySelector(`.curtain`);
   }
 
   init() {
@@ -40,10 +42,27 @@ export default class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
+    if (this.activeScreen === 2) {
+      this.curtainBlock.classList.add(`curtain--active`);
+      setTimeout(() => {
+        this.setHiddenScreens();
+        this.setActiveScreen();
+      }, 400);
+    } else {
+      this.curtainBlock.classList.remove(`curtain--active`);
+      this.setHiddenScreens();
+      this.setActiveScreen();
+    }
+  }
+
+  setHiddenScreens() {
     this.screenElements.forEach((screen) => {
       screen.classList.add(`screen--hidden`);
       screen.classList.remove(`active`);
     });
+  }
+
+  setActiveScreen() {
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     this.screenElements[this.activeScreen].classList.add(`active`);
   }
