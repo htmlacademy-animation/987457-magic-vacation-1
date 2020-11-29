@@ -1,4 +1,4 @@
-.btn {
+.btn:not(.rules__link) {
   @include btn-reset;
   position: relative;
   padding: 1.5rem 2.9rem;
